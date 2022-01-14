@@ -72,6 +72,7 @@ nav{
 }
 .banner{
     height: calc(100vh-80px);
+    min-height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -134,4 +135,108 @@ width: 100%;
 .card a{
     text-decoration: none;
     color:#ff008e ;
+}
+/* Gallery ---------------------------------------------*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+} 
+.photo img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #ff008e;
+}
+/* Contact part css */
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.contact img{
+    width: 100%;
+}
+.contact-right form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-field{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid #FF008E;
+}
+footer{
+    margin-top: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* navbar */
+
+#nav-toggler{
+    display: none;
+}
+.nav-toggler-icon{
+    display: none;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* responsive--------------------------------- */
+@media only screen and (max-width:950px) {
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+    .banner-left h1{
+        font-size: 35px;
+    }
+}
+@media(max-width:800px){
+    .banner{
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+    .feature, .gallery, .contact{
+        grid-template-columns: 1fr;
+    }
+    .photo{
+        text-align: center;
+    }
+    .photo img{
+        max-width: 350px;
+       
+    }
+    .banner-left{
+        order: 2;
+        padding: 50px 0;
+    }
+    .nav-toggler-icon{
+        display: block;
+    }
+    .navigation{
+        position: absolute;
+        padding: 20px 0;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        transform: translateY(-330px);
+        transition: .5s ease-in-out;
+    }
+    .navigation li a{
+        color: black;
+    }
+    #nav-toggler:checked ~ .navigation{
+        transition: 0;
+    }
 }
